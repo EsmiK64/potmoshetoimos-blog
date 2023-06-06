@@ -24,7 +24,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Nav from "../components/navigation.js";
 
 export default function Home() {
-
   const slider = React.useRef(null);
 
   const settings = {
