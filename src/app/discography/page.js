@@ -2,8 +2,6 @@
 
 import React from "react";
 import {
-  Navbar,
-  Collapse,
   Typography,
   Button,
   IconButton,
@@ -12,7 +10,6 @@ import {
   CardBody,
   CardFooter,
   ThemeProvider,
-  Avatar,
 } from "@material-tailwind/react";
 
 import Link from "next/link";
@@ -53,7 +50,7 @@ export default function Discography() {
           <Card className="mb-12 overflow-hidden">
             <img
               alt="Potmos Hetoimos Background"
-              className="w-[50vw] w-full object-cover object-center"
+              className="w-[50vw] object-cover object-center"
               src="https://scontent-prg1-1.xx.fbcdn.net/v/t39.30808-6/300953665_463716255768622_4371739264982142776_n.png?_nc_cat=103&ccb=1-7&_nc_sid=e3f864&_nc_ohc=JpqjAiZBD6QAX_YQ7n4&_nc_ht=scontent-prg1-1.xx&oh=00_AfB8lEjUP3HD5YWStYR2ohUo_DVQcksNN8f1Qb9e-Lz9YA&oe=6483D26B"
             />
           </Card>

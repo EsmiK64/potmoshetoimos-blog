@@ -27,7 +27,7 @@ export default function Nav() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="about" className="flex items-center hover:text-sky-400">
+        <a href="/about" className="flex items-center hover:text-sky-400">
           About
         </a>
       </Typography>
@@ -37,7 +37,7 @@ export default function Nav() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="discography" className="flex items-center hover:text-sky-400">
+        <a href="/discography" className="flex items-center hover:text-sky-400">
           Discography
         </a>
       </Typography>
@@ -47,7 +47,7 @@ export default function Nav() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="lyrics" className="flex items-center hover:text-sky-400">
+        <a href="/lyrics" className="flex items-center hover:text-sky-400">
           Lyrics
         </a>
       </Typography>
@@ -59,7 +59,7 @@ export default function Nav() {
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="home"
+          href="/"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
           Potmos Hetoimos
@@ -105,11 +105,8 @@ export default function Nav() {
           </IconButton>
         </div>
       </div>
-      <Collapse open={openNav}>
+      <Collapse open={openNav} className="sticky">
         {navList}
-        <Button variant="gradient" size="sm" fullWidth className="mb-2">
-          <span>Buy Now</span>
-        </Button>
       </Collapse>
     </Navbar>
   );
