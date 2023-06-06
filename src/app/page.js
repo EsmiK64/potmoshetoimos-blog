@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Slider from "react-slick";
 import {
   Navbar,
   Collapse,
@@ -13,142 +12,39 @@ import {
   CardBody,
   CardFooter,
   ThemeProvider,
+  Avatar,
 } from "@material-tailwind/react";
 
+import Link from "next/link";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import Nav from "../components/navigation.js";
+
 export default function Home() {
-  var settings = {
+
+  const slider = React.useRef(null);
+
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
   };
-
-  const [openNav, setOpenNav] = React.useState(false);
-
-  React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
-  }, []);
-
-  const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Pages
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Account
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
-      </Typography>
-    </ul>
-  );
 
   return (
     <>
       <ThemeProvider>
-        <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
-          <div className="flex items-center justify-between text-blue-gray-900">
-            <Typography
-              as="a"
-              href="#"
-              className="mr-4 cursor-pointer py-1.5 font-medium"
-            >
-              Material Tailwind
-            </Typography>
-            <div className="flex items-center gap-4">
-              <div className="mr-4 hidden lg:block">{navList}</div>
-              <Button
-                variant="gradient"
-                size="sm"
-                className="hidden lg:inline-block"
-              >
-                <span>Buy Now</span>
-              </Button>
-              <IconButton
-                variant="text"
-                className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-                ripple={false}
-                onClick={() => setOpenNav(!openNav)}
-              >
-                {openNav ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    className="h-6 w-6"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                )}
-              </IconButton>
-            </div>
-          </div>
-          <Collapse open={openNav}>
-            {navList}
-            <Button variant="gradient" size="sm" fullWidth className="mb-2">
-              <span>Buy Now</span>
-            </Button>
-          </Collapse>
-        </Navbar>
+        <Nav />
         <div className="mx-auto max-w-screen-md py-12">
           <Card className="mb-12 overflow-hidden">
             <img
@@ -157,55 +53,423 @@ export default function Home() {
               src="https://scontent-prg1-1.xx.fbcdn.net/v/t39.30808-6/300953665_463716255768622_4371739264982142776_n.png?_nc_cat=103&ccb=1-7&_nc_sid=e3f864&_nc_ohc=JpqjAiZBD6QAX_YQ7n4&_nc_ht=scontent-prg1-1.xx&oh=00_AfB8lEjUP3HD5YWStYR2ohUo_DVQcksNN8f1Qb9e-Lz9YA&oe=6483D26B"
             />
           </Card>
-          <Typography variant="h2" color="blue-gray" className="mb-2">
+          <Typography variant="h1" color="blue-gray" className="mb-2">
             Potmos Hetoimos
           </Typography>
           <Typography color="gray" className="font-normal">
-            Can you help me out? you will get a lot of free exposure doing this
-            can my website be in english?. There is too much white space do less
-            with more, so that will be a conversation piece can you rework to
-            make the pizza look more delicious other agencies charge much lesser
-            can you make the blue bluer?. I think we need to start from scratch
-            can my website be in english?, yet make it sexy i&apos;ll pay you in
-            a week we don&apos;t need to pay upfront i hope you understand can
-            you make it stand out more?. Make the font bigger can you help me
-            out? you will get a lot of free exposure doing this that&apos;s
-            going to be a chunk of change other agencies charge much lesser. Are
-            you busy this weekend? I have a new project with a tight deadline
-            that&apos;s going to be a chunk of change. There are more projects
-            lined up charge extra the next time.
+            Potmos Hetoimos, commonly known as PH, is a solo endeavor
+            originating from Baltimore, Maryland in the United States, initiated
+            by Matt Matheson in 2006. This artistic venture places a significant
+            emphasis on narrative-driven music, where the lyrics and overall
+            concept are inseparable from the musical compositions. The project's
+            moniker, derived from Plato's "Apology," means "doom is at hand" in
+            ancient Greek.
+          </Typography>
+          <br />
+          <Typography variant="h2" color="blue-gray" className="text-center">
+            Discography
           </Typography>
         </div>
-        <Slider {...settings}>
-        <div>
-            <Card className="mt-6 w-96">
-              <CardHeader
-                floated={false}
-                color="blue-gray"
-                className="h-80 w-80 mx-7"
-              >
-                <img
-                  src="https://f4.bcbits.com/img/a2160234265_10.jpg"
-                  alt="img-blur-shadow"
-                  layout="fill"
-                />
-              </CardHeader>
-              <CardBody>
-                <Typography variant="h5" color="blue-gray" className="mb-2">
-                  Proclam Thy Judgement
-                </Typography>
-                <Typography className="text-justify">
-                  The place is close to Barceloneta Beach and bus stop just 2
-                  min by walk and near to &quot;Naviglio&quot; where you can
-                  enjoy the main night life in Barcelona.
-                </Typography>
-              </CardBody>
-              <CardFooter className="pt-0">
-                <Button>Read More</Button>
-              </CardFooter>
-            </Card>
+        <div className="flex items-center mx-auto max-w-4xl">
+          <IconButton onClick={() => slider?.current?.slickPrev()}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </IconButton>
+
+          <div className="mx-auto max-w-3xl py-2">
+            <Slider ref={slider} {...settings}>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="h-80 w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a2160234265_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Proclaim Thy Judgement
+                    </Typography>
+                    <Typography className="text-justify">
+                      Potmos Hetoimos' debut album, "Proclaim Thy Judgment," was
+                      released on June 1, 2006. The album features five songs
+                      with lyrics directly sourced from Old Testament books of
+                      prophecy, conveying its thematic alignment with its title.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/p-t-j">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="h-80 w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a2552800182_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      The Millstone
+                    </Typography>
+                    <Typography className="text-justify">
+                      "The Millstone," Potmos Hetoimos' second album, was
+                      released on September 12, 2006. Despite being an overtly
+                      Christian album, it tackles controversial subjects like
+                      pedophilia, rape, and suicide, while also serving as a
+                      tribute to Matt Matheson's late girlfriend, Reneé.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/the-millstone">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="h-80 w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a1886558379_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Suffering The Storm
+                    </Typography>
+                    <Typography className="text-justify">
+                      Suffering the Storm is the third album by the American
+                      one-man band Potmos Hetoimos, released on June 1, 2007.
+                      Unlike the first two PH albums, there is no guitar
+                      anywhere on the album. Each song was written and performed
+                      entirely on bass."
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/s-t-s">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a4096153354_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Dance with Divinity
+                    </Typography>
+                    <Typography className="text-justify">
+                      "Dance with Divinity", the fourth album by Potmos
+                      Hetoimos, was released on September 12, 2007, and returns
+                      to a guitar-driven sound. It tells the story of a married
+                      couple facing religious differences, leading to a violent
+                      killing spree against Christians by the husband.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/d-w-d">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a3556330156_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Kingdoms
+                    </Typography>
+                    <Typography className="text-justify">
+                      "Kingdoms," Potmos Hetoimos' fifth album released on
+                      September 12, 2008, features Matt Matheson's friend Jason
+                      as the vocalist and explores diverse musical styles,
+                      emphasizing the theme of false human-created kingdoms
+                      challenging the authority of the true King.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/kingdoms">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a2623036751_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      The Greater Gospel
+                    </Typography>
+                    <Typography className="text-justify">
+                      The Greater Gospel is the sixth album by Potmos Hetoimos.
+                      It was released on September 12, 2009. The album discusses
+                      the problems of poverty, exploitation, and ignorance in
+                      the city, and how the Kingdom of God can break through
+                      manmade barriers to provide hope.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/t-g-g">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a0585412432_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Agatha
+                    </Typography>
+                    <Typography className="text-justify">
+                      "Agatha," the seventh album by Potmos Hetoimos, released
+                      on September 12, 2010, marks the beginning of a funeral
+                      doom trilogy. It reintroduces the storyline format,
+                      departs from previous post-metal albums, and showcases
+                      Matt Matheson's return as the vocalist.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/agatha">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a1127893052_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Evelyn
+                    </Typography>
+                    <Typography className="text-justify">
+                      "Evelyn" is the eighth album by the American one-man band
+                      Potmos Hetoimos. It was released on June 1, 2011 and is
+                      the second part of a funeral doom trilogy, preceded by
+                      Agatha and followed by Maribel.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/evelyn">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a2205022672_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Maribel
+                    </Typography>
+                    <Typography className="text-justify">
+                      "Maribel," Potmos Hetoimos' ninth album, released on
+                      October 10, 2013, serves as the concluding part of a
+                      funeral doom trilogy following "Agatha" and "Evelyn." It
+                      continues the story, intertwining with "Agatha" and
+                      providing different perspectives on overlapping timelines.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/maribel">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a1075646893_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      The Paragon Trisagion
+                    </Typography>
+                    <Typography className="text-justify">
+                      The Paragon Trisagion is the tenth album by the American
+                      one-man band Potmos Hetoimos. It was released on August
+                      18, 2015. The album also includes the 55-minute epic
+                      "Wayward&nbsp;Stars", which is the second longest song
+                      Potmos Hetoimos has ever recorded.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/t-p-t">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div>
+                <Card className="mt-6 w-96">
+                  <CardHeader
+                    floated={false}
+                    color="blue-gray"
+                    className="w-80 mx-7"
+                  >
+                    <img
+                      src="https://f4.bcbits.com/img/a1437689425_10.jpg"
+                      alt="img-blur-shadow"
+                      layout="fill"
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      Vox Medusae
+                    </Typography>
+                    <Typography className="text-justify">
+                      Vox Medusae is the eleventh album by the American one-man
+                      band Potmos Hetoimos. It was released on September 12,
+                      2018 via Not Music Records. It is the project's first
+                      album in 3 years, following The Paragon Trisagion in 2015.
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Button>
+                      <Link href="/discography/evelyn">Read More</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </Slider>
           </div>
-        </Slider>
+          <IconButton onClick={() => slider?.current?.slickNext()}>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </IconButton>
+        </div>
+        <br />
+        <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-between px-7">
+          <Typography color="blue-gray" className="font-normal">
+            &copy; 2023 EsmiK. All rights reserved.
+          </Typography>
+          <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+            <li>
+              <Typography
+                as="a"
+                href="#"
+                color="blue-gray"
+                className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+              >
+                About
+              </Typography>
+            </li>
+            <li>
+              <Typography
+                as="a"
+                href="#"
+                color="blue-gray"
+                className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+              >
+                Discography
+              </Typography>
+            </li>
+            <li>
+              <Typography
+                as="a"
+                href="#"
+                color="blue-gray"
+                className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+              >
+                Lyrics
+              </Typography>
+            </li>
+          </ul>
+        </footer>
       </ThemeProvider>
     </>
   );
