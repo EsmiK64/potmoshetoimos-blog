@@ -2,8 +2,6 @@
 
 import React from "react";
 import {
-  Navbar,
-  Collapse,
   Typography,
   Button,
   IconButton,
@@ -12,7 +10,6 @@ import {
   CardBody,
   CardFooter,
   ThemeProvider,
-  Avatar,
 } from "@material-tailwind/react";
 
 import Link from "next/link";
@@ -39,6 +36,12 @@ export default function Home() {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: "unslick",
+      }
+    ]
   };
 
   return (
@@ -71,7 +74,7 @@ export default function Home() {
           </Typography>
         </div>
         <div className="flex items-center mx-auto max-w-4xl">
-          <IconButton onClick={() => slider?.current?.slickPrev()}>
+          <IconButton onClick={() => slider?.current?.slickPrev()} className="hidden sm:block">
             <FontAwesomeIcon icon={faArrowLeft} />
           </IconButton>
 
@@ -428,7 +431,7 @@ export default function Home() {
               </div>
             </Slider>
           </div>
-          <IconButton onClick={() => slider?.current?.slickNext()}>
+          <IconButton onClick={() => slider?.current?.slickNext()} className="hidden sm:block">
             <FontAwesomeIcon icon={faArrowRight} />
           </IconButton>
         </div>
