@@ -24,34 +24,49 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Nav from "../../../components/navigation.js";
 
-export default function Proclaim_Thy_Judgeme() {
+export default function The_Millstone() {
   const TABLE_HEAD = ["No.", "Name", "Length"];
 
   const TABLE_ROWS = [
     {
       num: "1",
-      name: "Playing the Harlot",
-      lenght: "7:14",
+      name: "Judgement Day",
+      lenght: "4:06",
     },
     {
       num: "2",
-      name: "Scattered and Peeled",
-      lenght: "7:17",
+      name: "Submersion",
+      lenght: "7:28",
     },
     {
       num: "3",
-      name: "Illusions of Peace",
-      lenght: "12:25",
+      name: "The Lost",
+      lenght: "7:06",
     },
     {
       num: "4",
-      name: "Valley of Slaughter",
-      lenght: "8:43",
+      name: "The Red Beneath",
+      lenght: "14:38",
     },
     {
       num: "5",
-      name: "Army of Locusts",
-      lenght: "13:50",
+      name: "The Sins of Thousands",
+      lenght: "10:35",
+    },
+    {
+      num: "6",
+      name: "The Accuser",
+      lenght: "15:11",
+    },
+    {
+      num: "7",
+      name: "Submission",
+      lenght: "11:30",
+    },
+    {
+      num: "8",
+      name: "Arise",
+      lenght: "3:54",
     },
   ];
 
@@ -59,37 +74,45 @@ export default function Proclaim_Thy_Judgeme() {
     <>
       <ThemeProvider>
         <Nav />
-        <div className="mx-auto py-12 flex flex-col items-center">
-          <Card className="mb-12 overflow-hidden w-[80vw] sm:w-[20vw]">
+        <div className="mx-auto max-w-screen-md py-12 flex flex-col items-center">
+          <Card className="mb-12 overflow-hidden w-[20vw]">
             <img
-              alt="Proclaim Thy Judgement Cover"
-              className="w-[20vw] h-[20vw] object-cover object-center"
-              src="https://f4.bcbits.com/img/a2160234265_10.jpg"
+              alt="The Millstone Cover"
+              className="w-[80vw] h-[80vh] sm:w-[20vw] sm:h-[20vh] object-cover object-center"
+              src="https://f4.bcbits.com/img/a2552800182_10.jpg"
             />
           </Card>
           <Typography variant="h1" color="blue-gray" className="mb-2">
-            Proclaim Thy Judgement
+            The Millstone
           </Typography>
           <Typography color="gray" className="font-normal my-2">
-            Potmos Hetoimos' debut album, "Proclaim Thy Judgment," was released
-            on June 1, 2006. Notably, it was initially released without any
-            artwork, but collaborator Raleigh later resolved this by designing
-            art for all the previously artless albums.
+            The Millstone, the second full-length album by Potmos Hetoimos, was
+            released on September 12, 2006. In 2008, it was remixed to enhance
+            the sound quality. Initially, the album lacked artwork, but
+            collaborator Raleigh stepped in to address this by designing art for
+            all the previously artless albums.
           </Typography>
           <Typography color="gray" className="font-normal my-2">
-            The album consists of a collection of five songs recorded between
-            November 2005 ("Scattered and Peeled") and May 2006 ("Army of
-            Locusts"), with three additional songs recorded in March 2006. Due
-            to the varying recording times, the production quality differs from
-            song to song, reflecting the early stages of PH founder Matt
-            Matheson's recording and mixing journey. For the electronic drums,
-            Matheson used a microphone placed in front of an amp, deviating from
-            the direct drum-to-recorder setup.
+            Compared to its predecessor, The Millstone displayed a more focused
+            approach. The storyline, lyrics, and a few guitar parts were crafted
+            during the summer of 2006. The album was then recorded entirely from
+            scratch between August 11th and September 11th of that year. Its
+            release coincided with the passing of Reneé, Matt Matheson's first
+            girlfriend, serving as a tribute to her.
           </Typography>
           <Typography color="gray" className="font-normal my-2">
-            "Proclaim Thy Judgment" aptly lives up to its title as the song
-            lyrics directly draw from Old Testament books of prophecy, including
-            Hosea, Isaiah, Ezekiel, Jeremiah, and Joel.
+            Despite being an overtly Christian album, The Millstone tackles
+            controversial subject matter such as pedophilia, rape, and suicide.
+          </Typography>
+          <Typography color="gray" className="font-normal my-2">
+            The album's narrative revolves around a man who finds himself cast
+            into the ocean with a millstone tied around his neck, a literal
+            punishment referenced in Luke 17:1-2. He grapples with suppressing
+            the memories of the sinful act that led to his predicament while
+            also seeking the truth about what occurred. Later on, Satan attempts
+            to consume his mind and push him into permanent despair, but God
+            intervenes, preventing this and allowing the man to remember the
+            truth behind his actions.
           </Typography>
           <Typography variant="h2" color="blue-gray" className="my-4">
             Track Listing
@@ -132,7 +155,7 @@ export default function Proclaim_Thy_Judgeme() {
                         color="blue-gray"
                         className="font-normal"
                       >
-                        <Link href={`/lyrics/p-t-j#${name}`}>{name}</Link>
+                        <Link href={`/lyrics/the-millstone#${name}`}>{name}</Link>
                       </Typography>
                     </td>
                     <td className="p-4">
@@ -164,7 +187,7 @@ export default function Proclaim_Thy_Judgeme() {
                       color="blue-gray"
                       className="font-normal"
                     >
-                      <b>49:29</b>
+                      <b>74:27</b>
                     </Typography>
                   </td>
                 </tr>

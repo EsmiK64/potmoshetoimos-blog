@@ -33,8 +33,8 @@ export default function About() {
         <div className="mx-auto max-w-screen-md py-12 flex flex-col items-center">
           <Card className="mb-12 overflow-hidden w-[20vw]">
             <img
-              alt="Potmos Hetoimos Background"
-              className="w-[20vw] h-[20vw] object-cover object-center"
+              alt="Proclaim Thy Judgement Cover"
+              className="w-[80vw] h-[80vw] sm:w-[20vw] sm:h-[20vw] object-cover object-center"
               src="https://f4.bcbits.com/img/a2160234265_10.jpg"
             />
           </Card>
