@@ -49,7 +49,7 @@ export default function About() {
             variant="h2"
             color="blue-gray"
             className="mb-3"
-            id="Playing with Harlot"
+            id="Judgement Day"
           >
             01 - Judgement Day
           </Typography>
